@@ -1,11 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using Captain.Command;
 
 namespace Captain.Command
 {
-    public class MoveCharacterLeft : ScriptableObject, ICaptainCommand
+    public class MoveCharacterRight : ScriptableObject, ICaptainCommand
     {
         private float speed = 5.0f;
 
@@ -14,8 +15,8 @@ namespace Captain.Command
             var rigidBody = gameObject.GetComponent<Rigidbody2D>();
             if (rigidBody != null)
             {
-                rigidBody.velocity = new Vector2(-this.speed, rigidBody.velocity.y);
-                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                rigidBody.velocity = new Vector2(this.speed, rigidBody.velocity.y);
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
             }
         }
     }

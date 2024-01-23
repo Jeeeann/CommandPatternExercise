@@ -21,8 +21,8 @@ public class CaptainController : MonoBehaviour
     {
         //this.gameObject.AddComponent<CaptainMotivateCommand>();
         this.fire1 = gameObject.AddComponent<CaptainMotivateCommand>();
-        this.fire2 = ScriptableObject.CreateInstance<DoNothing>();
-        this.right = ScriptableObject.CreateInstance<DoNothing>();
+        this.fire2 = ScriptableObject.CreateInstance<CharacterJump>();
+        this.right = ScriptableObject.CreateInstance<MoveCharacterRight>();
         this.left = ScriptableObject.CreateInstance<MoveCharacterLeft>();
         this.booty.text = "Booty";
     }

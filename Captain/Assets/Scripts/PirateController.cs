@@ -15,7 +15,8 @@ public class PirateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.activeCommand = ScriptableObject.CreateInstance<NoWorkPirateCommand>();
+        //this.activeCommand = ScriptableObject.CreateInstance<NoWorkPirateCommand>();
+        this.activeCommand = ScriptableObject.CreateInstance<SlowWorkerPirateCommand>();
     }
 
     // Update is called once per frame
@@ -29,6 +30,18 @@ public class PirateController : MonoBehaviour
     //Has received motivation. A likely source is from on of the Captain's morale inducements.
     public void Motivate()
     {
-        this.activeCommand = Object.Instantiate(ScriptableObject.CreateInstance<NoWorkPirateCommand>());
+        int modeChoice = Random.Range(1, 3);
+        if(modeChoice == 1)
+        {
+            this.activeCommand = Object.Instantiate(ScriptableObject.CreateInstance<SlowWorkerPirateCommand>());
+        }
+        else if(modeChoice == 2)
+        {
+            this.activeCommand = Object.Instantiate(ScriptableObject.CreateInstance<NormalWorkerPirateCommand>());
+        }
+        else
+        {
+            this.activeCommand = Object.Instantiate(ScriptableObject.CreateInstance<FastWorkerPirateCommand>());
+        }
     }
 }
