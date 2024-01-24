@@ -51,3 +51,4 @@ Because `ScriptableObjects` have implicit data sharing, you need to use `Object.
 ## Stage 4: 
 
 Make your own `ICaptainCommand` bound to the Captain's "Fire2" input that interacts with the game mechanics in some interesting way. This is your opportunity to perform self-directed, design-driven gameplay programming. You can implement something as simple as a jumping mechanic or something as elaborate as a resource-driven morale system. Be sure to describe your new `ICaptainCommand` before your class declaration with a paragraph of text. This description is for your peer reviewer, so make it clear and communicative. 
+In Stage 4, I created a simple jumping mechanic. When the user press "Fire2", the gameObject captain will jump once to the height of 5.
